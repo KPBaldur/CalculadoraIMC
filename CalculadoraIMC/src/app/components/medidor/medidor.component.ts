@@ -16,9 +16,10 @@ export class MedidorComponent {
 
   altura!:number;
 
-  resultado:number | undefined;
+  resultado!:number;
 
   operacion() {
     this.resultado=this.peso / (this.altura * this.altura);
+    this.resultado= Math.round(this.resultado);
   }
 }

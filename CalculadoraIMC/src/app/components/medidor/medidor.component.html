@@ -1,18 +1,28 @@
+<div class="container-medidor">
+  <div>
+    <h1>Calcula tu IMC con nosotros</h1>
+    <h3>Selecciona tu sexo</h3>
 
-<div>
-  <h1>Calcula tu IMC con nosotros</h1>
+    <label for="">Peso (Kg)</label>
+    <input type="number" placeholder="Ingrese su peso en Kg" [(ngModel)]="peso">
 
-  <h3>Selecciona tu sexo</h3>
-  <label for="">Peso (Kg)</label>
-  <input type="number" placeholder="Ingrese su peso en Kg" [(ngModel)]="peso">
+    <label for="">Altura (m)</label>
+    <input type="number" placeholder="Ingrese su altiura en Metros" [(ngModel)]="altura">
 
-  <label for="">Altura (m)</label>
-  <input type="number" placeholder="Ingrese su altiura en Metros" [(ngModel)]="altura">
+    <button (click)="operacion()">Resultado</button>
 
+    <br><br>
+    <h3>Su IMC es {{ resultado }}</h3>
+  </div>
 
-
-  <p>Su IMC es {{ resultado }}</p>
-
-  <button (click)="operacion()">Resultado</button>
+  <div>
+    <p *ngIf="resultado <= 19">Se encuentra bajo peso</p>
+    <p *ngIf="resultado >= 20 && resultado <= 25; else sobrepeso">Se encuentra en un peso Saludable</p>
+    <ng-template #sobrepeso>
+      <p *ngIf="resultado > 25 && resultado <= 30">Se encuentra con Sobrepeso</p>
+      <p *ngIf="resultado > 30 && resultado <= 40">Se encuentra con Obesidad</p>
+      <p *ngIf="resultado > 40">Se encuentra con Obesidad morbida</p>
+    </ng-template>
+  </div>
 
 </div>

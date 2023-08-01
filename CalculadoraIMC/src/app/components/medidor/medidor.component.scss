@@ -1,0 +1,12 @@
+.container-medidor{
+  width: 30%;
+  height: 30%;
+  background-color: rgba($color: aliceblue, $alpha: 0.70);
+  display: flexbox;
+  justify-content: center;
+  padding: 20px;
+}
+
+.medidor{
+  grid-template-columns: 1;
+}
