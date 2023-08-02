@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CalculadoraIMC';
+
+  constructor(){
+  }
+
+  OnInit(){
+  }
+
+  peso!:number;
+
+  altura!:number;
+
+  resultado!:number;
+
+  operacion() {
+    this.resultado=this.peso / (this.altura * this.altura);
+    this.resultado= Math.round(this.resultado);
+  }
+
+  OnResultado() {
+    console.log(this.operacion)
+  }
 }

@@ -1,5 +1,75 @@
 *{
   font-family: Arial, Helvetica, sans-serif;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
+main form{
+  background-color: aquamarine;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container-medidor{
+  width: 30%;
+  height: 450px;
+  background-color: rgba(72,142,207,1) 0%, rgba(49,108,185,1) 29%, rgba(28,78,149,1) 60%, rgba(0,12,103,1) 100%;
+  display: flexbox;
+  justify-content: center;
+  padding: 20px;
+}
+
+.medidor{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 300px;
+}
+
+.medidor button{
+  background-color: cornflowerblue;
+  border-radius: 8px;
+  border: none;
+  color: azure;
+  font-size: 14px;
+  width: 100%;
+}
+
+.label{
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.input{
+  background-color: antiquewhite;
+  border: none;
+  border-radius: 8px;
+  height: 30px;
+  font-size: 14px;
+  padding: 6px;
+  margin-bottom: 0px;
+}
+
+.primary-button{
+  background-color: cornflowerblue;
+  border-radius: 8px;
+  border: none;
+  color: antiquewhite;
+  width: 100%;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  height: 50px;
+}
+
+.message-error{
+  color: #fe6161;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: all linear .5s ;
+  &.invalid {
+    opacity: 1;
+  }
+}
